@@ -202,8 +202,8 @@ export default function OfficinaPro() {
                       <Plus size={14} /> Nuova
                     </button>
                   </div>
-                  <div className={`grid gap-4 transition-all ${selectedCommessaId ? 'grid-cols-1 xl:grid-cols-[400px_1fr]' : 'grid-cols-1'}`}>
-                    <div className="bg-white border border-zinc-200 overflow-hidden shadow-sm">
+                  <div className="flex flex-col xl:flex-row xl:flex-nowrap gap-4 items-start w-full relative overflow-x-hidden p-1">
+                    <div className={`bg-white border border-zinc-200 overflow-hidden shadow-sm transition-all duration-300 shrink-0 w-full ${selectedCommessaId ? 'xl:w-[400px]' : 'xl:w-full'}`}>
                       <ChromaGrid commesse={commesse}
                         onSelect={c => setSelectedCommessaId(prev => prev === c.id ? null : c.id)}
                         selectedId={selectedCommessaId ?? undefined}
@@ -211,11 +211,13 @@ export default function OfficinaPro() {
                     </div>
                     <AnimatePresence>
                       {selectedCommessaId && (
-                        <CommessaDetail
-                          commessa={commesse.find(c => c.id === selectedCommessaId) ?? null}
-                          onClose={() => setSelectedCommessaId(null)}
-                          onSave={handleUpdateCommessa}
-                        />
+                        <div className="w-full xl:w-[calc(100%-416px)] shrink-0 min-w-0">
+                          <CommessaDetail
+                            commessa={commesse.find(c => c.id === selectedCommessaId) ?? null}
+                            onClose={() => setSelectedCommessaId(null)}
+                            onSave={handleUpdateCommessa}
+                          />
+                        </div>
                       )}
                     </AnimatePresence>
                   </div>

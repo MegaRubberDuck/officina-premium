@@ -344,21 +344,23 @@ export default function PreFatturazione({ commesse }: PreFatturazioneProps) {
           </div>
 
           {/* Pronte fatturazione */}
-          <div className="bg-zinc-900 rounded-none shadow-sm border border-zinc-900">
-            <div className="px-4 py-3 flex items-center justify-between border-b border-zinc-800">
-              <h3 className="text-[10px] font-bold uppercase tracking-widest text-white flex items-center gap-2">
-                <CheckCircle size={14} className="text-zinc-400" />
+          <div className="bg-white border border-zinc-200 rounded-none shadow-sm flex flex-col">
+            <div className="px-4 py-3 border-b-2 border-zinc-900 bg-zinc-50/50 flex items-center justify-between shrink-0">
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-zinc-900 flex items-center gap-2">
+                <CheckCircle size={14} className="text-zinc-500" />
                 Validazione Conclusa
               </h3>
-              <span className="font-mono text-[10px] font-bold bg-white text-zinc-900 px-2 py-0.5 rounded-none">
+              <span className="font-mono text-[10px] font-bold bg-zinc-900 text-white px-2 py-0.5 rounded-none">
                 {pronte.length} RECORD
               </span>
             </div>
-            <div className="bg-zinc-800 p-2">
-              <ChromaGrid commesse={pronte} />
-              {pronte.length === 0 && (
-                <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-mono p-4 text-center">Nessun record in coda.</p>
-              )}
+            <div className="divide-y divide-zinc-100 max-h-[300px] overflow-y-auto">
+              <div className="p-0">
+                <ChromaGrid commesse={pronte} />
+                {pronte.length === 0 && (
+                  <p className="text-[11px] text-zinc-400 font-mono px-4 py-5 italic text-center">Nessun record in coda.</p>
+                )}
+              </div>
             </div>
           </div>
 

@@ -191,8 +191,8 @@ export default function CreazioneCommessa({ onCommessaCreata }: CreazioneCommess
   return (
     <div className="grid grid-cols-1 xl:grid-cols-[1fr_340px] gap-0 min-h-[calc(100dvh-80px)]">
       {/* Left: Form */}
-      <div className="px-6 py-6 xl:px-8 xl:py-8 overflow-y-auto">
-        <div className="max-w-2xl border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-200/50">
+      <div className="px-6 py-6 xl:px-8 xl:py-8 overflow-y-auto w-full">
+        <div className="w-full border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-200/50">
           <div className="flex items-center gap-2 mb-6 border-b-2 border-zinc-900 pb-3">
             <h2 className="text-lg font-bold tracking-tight uppercase text-zinc-900">Configurazione Nuova Commessa</h2>
           </div>
@@ -268,7 +268,7 @@ export default function CreazioneCommessa({ onCommessaCreata }: CreazioneCommess
                 <Truck size={14} className="text-zinc-400" />
                 <span className="text-[10px] text-zinc-800 uppercase tracking-widest font-bold">Identificativo Veicolo</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div>
                   <label className="block text-[9px] uppercase tracking-widest font-semibold text-zinc-500 mb-1.5">Marca / Modello *</label>
                   <select
